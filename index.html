@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LOCCI</title>
+<meta name="description" content="A Living and Open Curriculum on Computational Interaction">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#E8ECEF;
+  --ink:#0B1620;
+  --muted:#54636F;
+  --rule:#C6CFD6;
+  --signal:#D6246E;
+  --sans:"Archivo",system-ui,-apple-system,sans-serif;
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-variation-settings:"wdth" 100;
+  font-size:clamp(1.0625rem,1rem + 0.3vw,1.25rem);
+  line-height:1.55;
+  background-image:
+    linear-gradient(to right,rgba(11,22,32,.04) 1px,transparent 1px),
+    linear-gradient(to bottom,rgba(11,22,32,.04) 1px,transparent 1px);
+  background-size:28px 28px;
+}
+
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+a{color:inherit;text-underline-offset:.2em;text-decoration-thickness:1px}
+a:hover{color:var(--signal)}
+:focus-visible{outline:2px solid var(--signal);outline-offset:3px}
+
+/* ---------- hero ---------- */
+.hero{padding:clamp(3rem,9vw,6rem) 0 0}
+
+.kicker{
+  font-size:1rem;
+  font-weight:500;
+  color:var(--muted);
+  margin:0 0 1.5rem;
+}
+.kicker a{text-decoration:none;border-bottom:1px solid var(--rule)}
+
+h1{
+  font-variation-settings:"wdth" 122;
+  font-weight:800;
+  font-size:clamp(3.25rem,14vw,8.5rem);
+  line-height:.85;
+  letter-spacing:-.035em;
+  margin:0;
+}
+
+/* signature: a step response that overshoots, settles, and lands on the line the call to action sits against */
+.trace{display:block;width:100%;height:auto;margin:2.75rem 0 0;overflow:visible}
+.trace .target{stroke:var(--rule);stroke-width:1;stroke-dasharray:3 5}
+.trace .curve{
+  fill:none;
+  stroke:var(--signal);
+  stroke-width:2.5;
+  stroke-linecap:round;
+  stroke-dasharray:2400;
+  stroke-dashoffset:2400;
+  animation:draw 2.2s cubic-bezier(.2,.7,.3,1) .2s forwards;
+}
+@keyframes draw{to{stroke-dashoffset:0}}
+
+/* ---------- call to action ---------- */
+.signup{
+  border-top:1.5px solid var(--ink);
+  margin-top:-1px;
+  padding:2.25rem 0 clamp(3rem,7vw,5rem);
+}
+.signup h2{
+  font-weight:700;
+  font-size:clamp(1.5rem,1.3rem + 0.6vw,2rem);
+  letter-spacing:-.02em;
+  line-height:1.15;
+  margin:0 0 .75rem;
+  max-width:22ch;
+}
+.signup .note{
+  margin:0 0 2rem;
+  color:var(--muted);
+  max-width:46ch;
+  font-size:1.0625rem;
+}
+
+.cta{
+  display:inline-block;
+  font-weight:600;
+  font-size:1.0625rem;
+  letter-spacing:-.005em;
+  padding:.9rem 1.75rem;
+  color:#fff;
+  background:var(--ink);
+  border:1.5px solid var(--ink);
+  text-decoration:none;
+  transition:background .15s ease,border-color .15s ease;
+}
+.cta:hover{background:var(--signal);border-color:var(--signal);color:#fff}
+
+/* ---------- modules ---------- */
+.modules{padding:clamp(3rem,7vw,5rem) 0;border-top:1px solid var(--rule)}
+.modules h2{font-weight:700;font-size:1.5rem;letter-spacing:-.02em;margin:0 0 .75rem}
+.modules .note{margin:0 0 2.5rem;color:var(--muted);max-width:48ch;font-size:1.0625rem}
+
+ol.list{list-style:none;margin:0;padding:0;display:grid;gap:1.75rem}
+@media(min-width:48rem){ol.list{grid-template-columns:1fr 1fr;gap:2.25rem 3.5rem}}
+ol.list li{display:flex;gap:1.25rem;align-items:baseline}
+ol.list .n{
+  font-weight:700;
+  font-variation-settings:"wdth" 80;
+  font-size:1.5rem;
+  line-height:1;
+  color:var(--signal);
+  flex:none;
+  min-width:1.75rem;
+  font-variant-numeric:tabular-nums;
+}
+ol.list h3{font-weight:600;font-size:1.25rem;letter-spacing:-.015em;margin:0 0 .35rem}
+ol.list p{margin:0;font-size:1rem;color:var(--muted);line-height:1.5}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid var(--rule);
+  padding:2rem 0 3.5rem;
+  font-size:.9375rem;
+  color:var(--muted);
+  display:flex;
+  gap:1.5rem;
+  flex-wrap:wrap;
+  justify-content:space-between;
+}
+footer a{text-decoration:none;border-bottom:1px solid var(--rule)}
+
+@media (prefers-reduced-motion:reduce){
+  .trace .curve{animation:none;stroke-dashoffset:0}
+  *{transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<main class="wrap">
+
+  <section class="hero">
+    <p class="kicker">A Living and Open Curriculum on <a href="https://github.com/computationalinteraction">Computational Interaction</a></p>
+
+    <h1>LOCCI</h1>
+
+    <svg class="trace" viewBox="0 0 1200 200" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+      <line class="target" x1="0" y1="86" x2="1200" y2="86"/>
+      <path class="curve" d="M0,168 H300 C340,168 350,36 400,36 C450,36 460,132 510,132 C560,132 566,68 616,68 C666,68 672,96 722,96 C772,96 776,86 826,86 H1200"/>
+    </svg>
+  </section>
+
+  <section class="signup">
+    <h2>Interested in contributing?</h2>
+    <p class="note">Leave your email and we will get in touch.</p>
+    <a class="cta" href="https://forms.gle/G8XtDikFphCc6xS4A">Register your interest</a>
+  </section>
+
+  <section class="modules">
+    <h2>Current modules in development & Contributors</h2>
+
+    <ol class="list">
+      <li><span class="n">1</span><div><h3>Input Inference</h3><p>John Williamson</p></div></li>
+      <li><span class="n">2</span><div><h3>Interaction Techniques</h3><p>Yue Jiang</p></div></li>
+      <li><span class="n">3</span><div><h3>User Modelling</h3><p>Patrick Ebel, Philipp Wintersberger</p></div></li>
+      <li><span class="n">4</span><div><h3>Computational Design</h3><p>Jason Wu</p></div></li>
+      <li><span class="n">5</span><div><h3>Human-in-the-Loop Optimization</h3><p>Thomas Langerak, Mark Colley</p></div></li>
+      <li><span class="n">6</span><div><h3>AI Assistance</h3><p>Antti Oulasvirta, Joongi Shin, Lena Hegemann</p></div></li>
+      <li><span class="n">7</span><div><h3>Yours?</h3><p>...</p></div></li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>Computational Interaction</span>
+    <a href="https://github.com/computationalinteraction/locci">github.com/computationalinteraction/locci</a>
+  </footer>
+
+</main>
+
+</body>
+</html>
